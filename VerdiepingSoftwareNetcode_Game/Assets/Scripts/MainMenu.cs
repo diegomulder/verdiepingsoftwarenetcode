@@ -31,14 +31,12 @@ public class MainMenu : MonoBehaviour
 	private Coroutine _connectionTimeoutRoutine;
 	private bool _isTryingToConnect = false;
 
-	private const int MAX_PLAYERS = 4;
-
 	void Start()
 	{
 		_hostButton.onClick.AddListener(HostButtonOnClick);
 		_clientButton.onClick.AddListener(ClientButtonOnClick);
 		_disconnectButton.onClick.AddListener(DisconnectOnClick);
-		//NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+		
 		if(NetworkManager.Singleton.IsConnectedClient)
 		{
 			ConnectionButtonsToggle(true);
@@ -58,6 +56,7 @@ public class MainMenu : MonoBehaviour
 		}
 
 		StartGameButton.interactable = NetworkManager.Singleton.IsHost;
+		ResponseText.gameObject.SetActive(!NetworkManager.Singleton.IsHost);
 
 		if (Input.GetKeyDown(KeyCode.Escape)) MenuToggle();
 	}
@@ -217,22 +216,5 @@ public class MainMenu : MonoBehaviour
 			NetworkManager.Singleton.Shutdown();
 		
 		ConnectionButtonsToggle(false);
-	}
-
-	private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request,
-							  NetworkManager.ConnectionApprovalResponse response)
-	{
-		int currentPlayers = NetworkManager.Singleton.ConnectedClientsList.Count;
-
-		if (currentPlayers >= MAX_PLAYERS)
-		{
-			response.Approved = false;
-			response.Reason = "Server is full";
-			return;
-		}
-
-		response.Approved = true;
-		response.CreatePlayerObject = false;
-		response.Pending = false;
 	}
 }

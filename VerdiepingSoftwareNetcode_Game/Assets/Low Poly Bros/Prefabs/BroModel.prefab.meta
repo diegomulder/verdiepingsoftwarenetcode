@@ -1,14 +1,7 @@
 fileFormatVersion: 2
-guid: bc2b234c7b4d76d49a003bb63879f1c5
+guid: 53a897f0071df7f46918eb40ba501e9f
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 267317
-  packageName: Low Poly Modular Characters
-  packageVersion: 1.0
-  assetPath: Assets/Low Poly Bros/Prefabs/BroModel.prefab
-  uploadId: 630860
