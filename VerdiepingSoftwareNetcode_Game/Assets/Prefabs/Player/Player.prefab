@@ -347,6 +347,8 @@ MonoBehaviour:
   bobSmooth: 10
   _standUpCameraHeight: 1.6
   _crouchCameraHeight: 1.2
+  fallTimeLimit: 2
+  fallYLimit: -10
 --- !u!114 &760317990416790921
 MonoBehaviour:
   m_ObjectHideFlags: 0
