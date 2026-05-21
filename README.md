@@ -1,5 +1,7 @@
 1.Om multiplayer uit te testen moet je minimaal 2 spelers op de zelfde IP hebben.
+
 2.Als je multiplayer wilt starten moet 1 speler hosten en de andere clienten.
+
 3.Als je elkaar ziet in de map kan de host op "ESC" drukken om de mainmenu weer te openen en de game starten.
 
 In de game zoek je met je UV licht, die je op de rechter muisknop kunt activeren, naar letters door de map. Alle letters gevonden?
